@@ -5,46 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
-
-    <script src="
-    https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/browse/babel-standalone@6.26.0/babel.js"></script>
 
     <div id="root"></div>
     <div id="rootReact"></div>
+    <div id="rootJSX"></div>
 
     <script>
       const div = document.createElement("div");
-
       div.className = "hello-world";
       document.querySelector("#root").append(div);
       const span = document.createElement("span");
-
       div.append(span);
       const strong = document.createElement("strong");
       strong.textContent = Math.random();
       span.append(strong);
       const mark = document.createElement("mark");
-      mark.textContent = " - this is random number";
+      mark.textContent = "- this is random number";
       span.append(mark);
     </script>
 
-    <script>
+    <!-- <script>
       const reactDiv = React.createElement("div", {
         className: "hello-world",
-      }, React.createElement (
-        'span', {},
-        React.createElement('strong', {}, Math.random()),
-        React.createElement('mark', {}, " - this is random number")
+        children: React.createElement("span", {
+          children: [
+            React.createElement("strong", {
+              children: Math.random(),
+            }),
+            React.createElement("mark", {
+              children: "- this is random number",
+            }),
+          ],
+        }),
+      });
 
-      ));
 
+    </script> -->
+      <!-- <script>
+     const reactDiv = React.createElement('div', {
+         className : "hello-world",
+     }, React.createElement (
+         'span', {},
+         React.createElement('strong', {}, Math.random()),
+         React.createElement('mark' , {} , "- this is random number")
+     ));
+     ReactDOM.render(reactDiv, document.querySelector("#rootReact"));
+    </script> -->
 
-
-
-      ReactDOM.render(reactDiv, document.querySelector("#rootReact"));
-    </script>
+<script type="text/babel">
+    const jsxDiv = (
+        <div className= "hello-world">
+            <span>
+                <strong>{Math.random()}</strong>
+                <mark> - this is random number</mark>
+                </span>
+            </div>
+    );
+    ReactDOM.render(jsxDiv, document.querySelector('#rootJSX'));
+</script>
   </body>
 </html>
