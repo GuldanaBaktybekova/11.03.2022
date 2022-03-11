@@ -21,7 +21,7 @@
       div.className = "hello-world";
       document.querySelector("#root").append(div);
       const span = document.createElement("span");
-      
+
       div.append(span);
       const strong = document.createElement("strong");
       strong.textContent = Math.random();
@@ -34,17 +34,16 @@
     <script>
       const reactDiv = React.createElement("div", {
         className: "hello-world",
-        children: React.createElement("span", {
-          children: [
-          React.createElement("strong", {
-            children: Math.random(),
-          }),
-          React.createElement('mark', {
-            children: " - this is random number",
-          })
-          ]
-        }),
-      });
+      }, React.createElement (
+        'span', {},
+        React.createElement('strong', {}, Math.random()),
+        React.createElement('mark', {}, " - this is random number")
+
+      ));
+
+
+
+
       ReactDOM.render(reactDiv, document.querySelector("#rootReact"));
     </script>
   </body>
