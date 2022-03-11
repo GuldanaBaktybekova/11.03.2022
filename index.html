@@ -32,9 +32,14 @@
       const reactDiv = React.createElement("div", {
         className: "hello-world",
         children: React.createElement("span", {
-          children: React.createElement("strong", {
+          children: [
+          React.createElement("strong", {
             children: Math.random(),
           }),
+          React.createElement('mark', {
+            children: " - this is random number",
+          })
+          ]
         }),
       });
       ReactDOM.render(reactDiv, document.querySelector("#rootReact"));
