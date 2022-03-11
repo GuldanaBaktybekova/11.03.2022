@@ -60,15 +60,28 @@
     </script> -->
 
 <script type="text/babel">
-    const jsxDiv = (
+    function RandomNumber(props) {
+      return (
         <div className= "hello-world">
             <span>
                 <strong>{Math.random()}</strong>
                 <mark> - this is random number</mark>
                 </span>
             </div>
-    );
-    ReactDOM.render(jsxDiv, document.querySelector('#rootJSX'));
+            );
+
+    }
+    const App = (
+      <div>
+        <RandomNumber max={10}/>
+        <RandomNumber max={100}/>
+        <RandomNumber max={1000}/>
+        <RandomNumber max={10000}/>
+        </div>
+    )
+        
+    
+    ReactDOM.render(App, document.querySelector('#root'));
 </script>
   </body>
 </html>
