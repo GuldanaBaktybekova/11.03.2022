@@ -11,7 +11,7 @@
   <body>
     <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/browse/babel-standalone@6.26.0/babel.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
 
     <div id="root"></div>
     <div id="rootReact"></div>
@@ -48,7 +48,7 @@
 
 
     </script> -->
-      <!-- <script>
+    <!-- <script>
      const reactDiv = React.createElement('div', {
          className : "hello-world",
      }, React.createElement (
@@ -58,30 +58,69 @@
      ));
      ReactDOM.render(reactDiv, document.querySelector("#rootReact"));
     </script> -->
-
-<script type="text/babel">
-    function RandomNumber(props) {
-      return (
-        <div className= "hello-world">
+    <!-- <script type="text/babel">
+      function RandomNumber(props) {
+        return (
+          <div className="hello-world">
             <span>
-                <strong>{Math.random()}</strong>
-                <mark> - this is random number</mark>
-                </span>
-            </div>
-            );
-
-    }
-    const App = (
-      <div>
-        <RandomNumber max={10}/>
-        <RandomNumber max={100}/>
-        <RandomNumber max={1000}/>
-        <RandomNumber max={10000}/>
+              <strong>{(Math.random() * props.max).toFixed()}</strong>
+              <mark> - this is random number</mark>
+            </span>
+          </div>
+        );
+      }
+  
+      const App = (
+        <div>
+          <RandomNumber max={10} />
+          <RandomNumber max={100} />
+          <RandomNumber max={1000} />
+          <RandomNumber max={10000} />
         </div>
-    )
-        
-    
-    ReactDOM.render(App, document.querySelector('#root'));
-</script>
+      );
+  
+      ReactDOM.render(App, document.querySelector('#root')); -->
+
+    <script type="text/babel">
+      function Hello(props) {
+        return (
+          <div className="hello">
+            <h1>Hi, {props.name}</h1>
+          </div>
+        );
+      }
+
+      const App = (
+        <div>
+          <Hello name="A" />
+          <Hello name="B" />
+          <Hello name="C" />
+        </div>
+      );
+
+      ReactDOM.render(App, document.querySelector("#root"));
+
+      function Color(props) {
+        return (
+          <div className="color">
+            <span>
+              {`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
+                Math.random() * 255
+              })`}
+            </span>
+          </div>
+        );
+      }
+
+      const Color = (
+        <div>
+          <Hello name="A" />
+          <Hello name="B" />
+          <Hello name="C" />
+        </div>
+      );
+
+      ReactDOM.render(App, document.querySelector("#root"));
+    </script>
   </body>
 </html>
