@@ -17,7 +17,7 @@
     <div id="rootReact"></div>
     <div id="rootJSX"></div>
 
-    <script>
+    <!-- <script>
       const div = document.createElement("div");
       div.className = "hello-world";
       document.querySelector("#root").append(div);
@@ -29,7 +29,7 @@
       const mark = document.createElement("mark");
       mark.textContent = "- this is random number";
       span.append(mark);
-    </script>
+    </script> -->
 
     <!-- <script>
       const reactDiv = React.createElement("div", {
@@ -82,45 +82,44 @@
       ReactDOM.render(App, document.querySelector('#root')); -->
 
     <script type="text/babel">
-      function Hello(props) {
-        return (
-          <div className="hello">
-            <h1>Hi, {props.name}</h1>
-          </div>
-        );
-      }
+      // function Hello(props) {
+      //   return (
+      //     <div className="hello">
+      //       <h1>Hi, {props.name}</h1>
+      //     </div>
+      //   );
+      // }
 
-      const App = (
-        <div>
-          <Hello name="A" />
-          <Hello name="B" />
-          <Hello name="C" />
-        </div>
-      );
+      // const App = (
+      //   <div>
+      //     <Hello name="A" />
+      //     <Hello name="B" />
+      //     <Hello name="C" />
+      //   </div>
+      // );
 
       ReactDOM.render(App, document.querySelector("#root"));
 
       function Color(props) {
         return (
           <div className="color">
-            <span>
-              {`rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
-                Math.random() * 255
-              })`}
-            </span>
+            <span> Color{props.color}</span>
+           
+            
           </div>
         );
       }
 
       const Color = (
         <div>
-          <Hello name="A" />
-          <Hello name="B" />
-          <Hello name="C" />
+          <Color color={`rgb(${Math.random() * props}, ${Math.random() * props}, ${
+                Math.random() * props
+              })`} />
+         
         </div>
       );
 
-      ReactDOM.render(App, document.querySelector("#root"));
+      ReactDOM.render(Color, document.querySelector("#root"));
     </script>
   </body>
 </html>
